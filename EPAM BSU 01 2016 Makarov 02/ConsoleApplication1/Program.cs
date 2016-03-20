@@ -16,7 +16,7 @@ namespace ConsoleApplication1
             myarr2[1] = new int[4] { 3, 7, 2, 5 };
             myarr2[2] = new int[3] { 1, 1, 8 };
             myarr2[3] = new int[5] {100, 0, 0, -1, -5};
-            myarr2[4] = new int[3] { 50, 4, 2 };
+            myarr2[4] = new int[3] { -50, 4, 2 };
             Console.WriteLine(myarr2.Length);
             Console.ReadKey();
             
@@ -26,6 +26,7 @@ namespace ConsoleApplication1
             MaxDec maxDec = new MaxDec();
             MinInc minInc = new MinInc();
             MinDec minDec = new MinDec();
+            MaxAbs maxAbs = new MaxAbs();
             Logic<int>.BubbleSort(myarr2,sumInc);
             for (int i = 0; i < myarr2.Length; i++)
                 if (myarr2[i]!=null)
@@ -54,6 +55,13 @@ namespace ConsoleApplication1
                 if (myarr2[i] != null)
                     Console.WriteLine("{0} {1}", myarr2[i][0].ToString(), myarr2[i][1].ToString());
             Console.WriteLine("min dec --------------------------");
+
+            Logic<int>.BubbleSort(myarr2, maxAbs);
+            for (int i = 0; i < myarr2.Length; i++)
+                if (myarr2[i] != null)
+                    Console.WriteLine("{0} {1}", myarr2[i][0].ToString(), myarr2[i][1].ToString());
+            Console.WriteLine("max Abs --------------------------");
+
 
             Console.ReadKey();
         }

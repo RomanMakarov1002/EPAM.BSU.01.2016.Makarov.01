@@ -55,4 +55,20 @@ namespace BubbleSort
             return (x.Max() < y.Max()) ? 1 : -1;
         }
     }
+
+    public sealed class MaxAbs : IComparer<Int32[]>
+    {
+        public int Compare(int[] lhs, int[] rhs)
+        {
+            int lhsAbs=Math.Abs(lhs[0]);
+            int rhsAbs = Math.Abs(rhs[0]);
+            for (int i=1; i<lhs.Length; i++)
+                if (Math.Abs(lhs[i]) > lhsAbs)
+                    lhsAbs = Math.Abs(lhs[i]);
+            for (int i=1; i<rhs.Length; i++)
+                if (Math.Abs(rhs[i]) > rhsAbs)
+                    rhsAbs = Math.Abs(rhs[i]);
+            return (lhsAbs > rhsAbs) ? 1 : -1;
+        }
+    }   
 }
