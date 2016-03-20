@@ -6,19 +6,22 @@ using System.Threading.Tasks;
 
 namespace BubbleSort
 {
-    public class Logic
-    { 
-        /// <summary> Bubble sort of jagged array </summary>
-        public void BubbleSort(int[][] arr, Func<int[], int[], int> cmp)
-        {
+    public static class Logic<T>
+    {
+        /// <summary> Bubble sort for jagged array </summary>
+        public static void BubbleSort(T[][] arr, IComparer<T[]> comparer )
+        {            
             for (int i = 0; i < arr.Length - 1; i++)
                 for (int j = 0; j < arr.Length - i - 1; j++)
-                    if (arr[j] != null && arr[j + 1] != null)
-                        if (cmp(arr[j], arr[j + 1]) > 0)
-                            SwapRows(ref arr[j], ref arr[j + 1]);               
+                {
+                    if (arr[j] == null || arr[j + 1] == null)
+                        throw new NullReferenceException();
+                        if (comparer.Compare(arr[j],arr[j+1])>0)
+                            SwapRows(ref arr[j], ref arr[j + 1]);
+                }
         }
-
-        private void SwapRows(ref int[] left, ref int[] right)
+     
+        private static void SwapRows(ref T[] left, ref T[] right)
         {
             var t = left;
             left = right;

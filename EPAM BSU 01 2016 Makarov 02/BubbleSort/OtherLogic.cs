@@ -1,117 +1,58 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BubbleSort
 {
-    class OtherLogic
+    public sealed class SumInc : IComparer<Int32[]>
     {
-        // 6 methods for diffrent types of sort
-        public int SumInc(int[] firstLine, int[] secondLine)
+        public int Compare(int[] x, int[] y)
         {
-            int sum1 = 0;
-            int sum2 = 0;
-            for (int i = 0; i < firstLine.Length; i++)
-                sum1 += firstLine[i];
-            for (int i = 0; i < secondLine.Length; i++)
-                sum2 += secondLine[i];
-            if (sum1 > sum2)
-                return 1;
-            if (sum1 < sum2)
-                return -1;
-            else
-                return 0;
+            return (x.Sum() > y.Sum()) ? 1 : -1;
         }
+    }
 
-        public int SumDec(int[] firstLine, int[] secondLine)
+    public sealed class SumDec : IComparer<Int32[]>
+    {
+        public int Compare(int[] x, int[] y)
         {
-            int sum1 = 0;
-            int sum2 = 0;
-            for (int i = 0; i < firstLine.Length; i++)
-                sum1 += firstLine[i];
-            for (int i = 0; i < secondLine.Length; i++)
-                sum2 += secondLine[i];
-            if (sum1 < sum2)
-                return 1;
-            if (sum1 > sum2)
-                return -1;
-            else
-                return 0;
+            return (x.Sum() < y.Sum()) ? 1 : -1;
         }
+    }
 
-        public int MaxInc(int[] firstLine, int[] secondLine)
+    public sealed class MinInc : IComparer<Int32[]>
+    {
+        public int Compare(int[] x, int[] y)
         {
-            int sum1 = firstLine[0];
-            int sum2 = secondLine[0];
-            for (int i = 0; i < firstLine.Length - 1; i++)
-                if (sum1 < firstLine[i + 1])
-                    sum1 = firstLine[i + 1];
-            for (int i = 0; i < secondLine.Length - 1; i++)
-                if (sum2 < secondLine[i + 1])
-                    sum2 = secondLine[i + 1];
-            if (sum1 > sum2)
-                return 1;
-            if (sum1 < sum2)
-                return -1;
-            else
-                return 0;
+            return (x.Min() > y.Min()) ? 1 : -1;
         }
+    }
 
-        public int MaxDec(int[] firstLine, int[] secondLine)
+    public sealed class MinDec : IComparer<Int32[]>
+    {
+        public int Compare(int[] x, int[] y)
         {
-            int sum1 = firstLine[0];
-            int sum2 = secondLine[0];
-            for (int i = 0; i < firstLine.Length - 1; i++)
-                if (sum1 < firstLine[i + 1])
-                    sum1 = firstLine[i + 1];
-            for (int i = 0; i < secondLine.Length - 1; i++)
-                if (sum2 < secondLine[i + 1])
-                    sum2 = secondLine[i + 1];
-            if (sum1 < sum2)
-                return 1;
-            if (sum1 > sum2)
-                return -1;
-            else
-                return 0;
+            return (x.Min() < y.Min()) ? 1 : -1;
         }
+    }
 
-        public int MinInc(int[] firstLine, int[] secondLine)
+    public sealed class MaxInc : IComparer<Int32[]>
+    {
+        public int Compare(int[] x, int[] y)
         {
-            int sum1 = firstLine[0];
-            int sum2 = secondLine[0];
-            for (int i = 0; i < firstLine.Length - 1; i++)
-                if (sum1 > firstLine[i + 1])
-                    sum1 = firstLine[i + 1];
-            for (int i = 0; i < secondLine.Length - 1; i++)
-                if (sum2 > secondLine[i + 1])
-                    sum2 = secondLine[i + 1];
-            if (sum1 > sum2)
-                return 1;
-            if (sum1 < sum2)
-                return -1;
-            else
-                return 0;
+            return (x.Max() > y.Max()) ? 1 : -1;
         }
+    }
 
-        public int MinDec(int[] firstLine, int[] secondLine)
+    public sealed class MaxDec : IComparer<Int32[]>
+    {
+        public int Compare(int[] x, int[] y)
         {
-            int sum1 = firstLine[0];
-            int sum2 = secondLine[0];
-            for (int i = 0; i < firstLine.Length - 1; i++)
-                if (sum1 > firstLine[i + 1])
-                    sum1 = firstLine[i + 1];
-            for (int i = 0; i < secondLine.Length - 1; i++)
-                if (sum2 > secondLine[i + 1])
-                    sum2 = secondLine[i + 1];
-            if (sum1 < sum2)
-                return 1;
-            if (sum1 > sum2)
-                return -1;
-            else
-                return 0;
+            return (x.Max() < y.Max()) ? 1 : -1;
         }
-
     }
 }
