@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BubbleSort", "BubbleSort\Bu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{509008BB-B56D-488E-ADEB-3B6080A63948}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit_Tests", "NUnit_Tests\NUnit_Tests.csproj", "{C72EA9E9-1F1B-46E9-B520-B1488183CA24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{509008BB-B56D-488E-ADEB-3B6080A63948}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{509008BB-B56D-488E-ADEB-3B6080A63948}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{509008BB-B56D-488E-ADEB-3B6080A63948}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C72EA9E9-1F1B-46E9-B520-B1488183CA24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C72EA9E9-1F1B-46E9-B520-B1488183CA24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C72EA9E9-1F1B-46E9-B520-B1488183CA24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C72EA9E9-1F1B-46E9-B520-B1488183CA24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
