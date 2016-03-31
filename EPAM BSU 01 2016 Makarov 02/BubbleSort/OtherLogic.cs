@@ -16,6 +16,38 @@ namespace BubbleSort
         }
     }
 
+    public sealed class SumDec4Double : IComparer<Double[]>
+    {
+        public int Compare(double[] x, double[] y)
+        {
+            return (x.Sum() < y.Sum()) ? 1 : -1;
+        }
+    }
+
+    public sealed class MaxAbs4Double : IComparer<Double[]>
+    {
+        public int Compare(double[] lhs, double[] rhs)
+        {
+            double lhsAbs = Math.Abs(lhs[0]);
+            double rhsAbs = Math.Abs(rhs[0]);
+            for (int i = 1; i < lhs.Length; i++)
+                if (Math.Abs(lhs[i]) > lhsAbs)
+                    lhsAbs = Math.Abs(lhs[i]);
+            for (int i = 1; i < rhs.Length; i++)
+                if (Math.Abs(rhs[i]) > rhsAbs)
+                    rhsAbs = Math.Abs(rhs[i]);
+            return (lhsAbs > rhsAbs) ? 1 : -1;
+        }
+    }
+
+    public sealed class MinInc4Double : IComparer<Double[]>
+    {
+        public int Compare(double[] x, double[] y)
+        {
+            return (x.Min() > y.Min()) ? 1 : -1;
+        }
+    }
+
     public sealed class SumDec : IComparer<Int32[]>
     {
         public int Compare(int[] x, int[] y)
